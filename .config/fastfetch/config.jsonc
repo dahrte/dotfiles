@@ -1,0 +1,202 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty",
+    "source": "~/.config/fastfetch/logo.png",
+    "height": 40
+  },
+  "display": {
+    "key": {
+      "paddingLeft": 1
+    },
+    "size": {
+      "binaryPrefix": "jedec"
+    }
+  },
+  "modules": [
+    "title",
+
+    {
+      "type": "custom",
+      "format": " "
+    },
+    {
+      "type": "custom",
+      "format": "──────────────────────────────── System ───────────────────────────────────────",
+      "outputColor": "yellow"
+    },
+    {
+      "type": "os",
+      "key": "╰ 󰒋 OS",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "kernel",
+      "key": "╰  Kernel",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "uptime",
+      "key": "╰  Uptime",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "packages",
+      "key": "╰  Packages",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "custom",
+      "format": "───────────────────────────────────────────────────────────────────────────────"
+    },
+
+    {
+      "type": "custom",
+      "format": " "
+    },
+    {
+      "type": "custom",
+      "format": "─────────────────────────── Desktop Environment ───────────────────────────────",
+      "outputColor": "blue"
+    },
+    {
+      "type": "display",
+      "key": "╰  Display {name}",
+      "format": "{width}x{height} @{refresh-rate} Hz ({inch}\")"
+    },
+    {
+      "type": "de",
+      "key": "╰  DE"
+    },
+    {
+      "type": "wm",
+      "key": "╰  WM"
+    },
+    {
+      "type": "wmtheme",
+      "key": "╰  WM Theme"
+    },
+    {
+      "type": "theme",
+      "key": "╰  Theme"
+    },
+    {
+      "type": "icons",
+      "key": "╰  Icons"
+    },
+    {
+      "type": "font",
+      "key": "╰  Font"
+    },
+    {
+      "type": "cursor",
+      "key": "╰  Cursor"
+    },
+    {
+      "type": "custom",
+      "format": "───────────────────────────────────────────────────────────────────────────────"
+    },
+
+    {
+      "type": "custom",
+      "format": " "
+    },
+    {
+      "type": "custom",
+      "format": "───────────────────────────────── Terminal ────────────────────────────────────",
+      "outputColor": "green"
+    },
+    {
+      "type":"shell",
+      "key": "╰  Shell",
+      "keyColor": "green"
+    },
+    {
+      "type":"terminal",
+      "key": "╰  Terminal",
+      "keyColor": "green"
+    },
+    {
+      "type":"terminalfont",
+      "key": "╰  Terminal Font",
+      "keyColor": "green"
+    },
+    {
+      "type": "custom",
+      "format": "───────────────────────────────────────────────────────────────────────────────"
+    },
+
+    {
+      "type": "custom",
+      "format": " "
+    },
+    {
+      "type": "custom",
+      "format": "───────────────────────────────── Hardware ────────────────────────────────────",
+      "outputColor": "cyan"
+    },
+    {
+      "type": "board",
+      "key": "╰  MOBO",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "cpu",
+      "key": "╰  CPU",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "gpu",
+      "key": "╰  GPU",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "memory",
+      "key": "╰  Memory",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "swap",
+      "key": "╰  Swap",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "disk",
+      "key": "╰ 󰋊 Disk ({name})",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "custom",
+      "format": "───────────────────────────────────────────────────────────────────────────────"
+    },
+
+    {
+      "type": "custom",
+      "format": " "
+    },
+    {
+      "type": "custom",
+      "format": "────────────────────────────── Network & Power ────────────────────────────────",
+      "outputColor": "magenta"
+    },
+    {
+      "type":"localip",
+      "key": "╰ 󰒍 Local IP ({ifname})",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "battery",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "poweradapter",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "custom",
+      "format": "───────────────────────────────────────────────────────────────────────────────"
+    },
+
+    "break"
+  ]
+}
