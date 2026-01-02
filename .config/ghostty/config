@@ -24,3 +24,6 @@ shell-integration = zsh
 # Application
 maximize = true
 title = Ghostty
+
+# Clipboard
+copy-on-select = clipboard
