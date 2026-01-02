@@ -4,6 +4,10 @@
     "type": "kitty",
     "source": "~/.config/fastfetch/logo.png",
     "height": 40
+
+    // For emulators that do not support the Kitty graphics protocol
+    // "type": "file-raw",
+    // "source": "~/.config/fastfetch/logo.txt"
   },
   "display": {
     "key": {
