@@ -128,6 +128,7 @@ alias ls='eza -lagh --group-directories-first'
 alias tree='eza --tree -L 2'
 alias vim=nvim
 alias c=clear
+alias y=yazi
 
 ##############################################################################
 # PROMPT - Always at the end
