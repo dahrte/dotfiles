@@ -1,0 +1,85 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+
+final_space = true
+version = 4
+
+# ======================================================
+# BLOCK: RPROMPT (right side
+# ======================================================
+[[blocks]]
+type = "rprompt"
+overflow = 'hidden'
+
+    [[blocks.segments]]
+    type = "executiontime"
+    style = "plain"
+    template = "{{ .FormattedMs }}"
+    background = 'transparent'
+    foreground = "yellow"
+
+        [blocks.segments.options]
+        threshold = 500
+        always_enabled = true
+
+# ======================================================
+# BLOCK: MAIN PROMPT (left side)
+# ======================================================
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+    [[blocks.segments]]
+    type = "path"
+    style = "plain"
+    template = "<#cdd6f4>シ</> {{ .Path }} "
+    background = "transparent"
+    foreground = "#89b4fa"
+
+        [blocks.segments.options]
+        style = "full"
+
+    # ------------------------------------------------------
+    # Git segment
+    # ------------------------------------------------------
+    [[blocks.segments]]
+    type = "git"
+    style = "plain"
+    template = " {{ .HEAD }}"
+    background = "transparent"
+    foreground = "#cdd6f4"
+    foreground_templates = [
+        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}red{{ end }}"
+    ]
+
+        [blocks.segments.options]
+        branch_template = "{{ trunc 25 .Branch }}"
+        branch_icon = "󰘬 "
+        commit_icon = " "
+        fetch_status = true
+        tag_icon = "󰓹 "
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+    [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    template = '→'
+    background = 'transparent'
+    foreground_templates = [
+        "{{ if gt .Code 0 }}red{{ end }}",
+        "{{ if eq .Code 0 }}green{{ end }}",
+    ]
+
+[transient_prompt]
+template = "⤍ "
+background = "transparent"
+foreground = "#74c7ec"
+
+[secondary_prompt]
+  template = '⤍'
+  background = 'transparent'
+  foreground = 'magenta'
