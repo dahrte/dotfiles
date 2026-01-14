@@ -12,11 +12,23 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # fnm
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# export PNPM_HOME="$HOME/.local/share/pnpm"
+# export PATH="$PNPM_HOME:$PATH"
+
+# tuitube
+export PATH="$HOME/.termcast/compiled/tuitube/bin:$PATH"
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
 
 ##############################################################################
 # ZINIT (PLUGIN MANAGER) Must be initialized BEFORE plugins
@@ -129,6 +141,7 @@ alias tree='eza --tree -L 2'
 alias vim=nvim
 alias c=clear
 alias y=yazi
+alias op=opencode
 
 ##############################################################################
 # PROMPT - Always at the end
@@ -140,7 +153,7 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 # FASTFETCH
 ##############################################################################
 
-if [[ -o interactive ]]; then
+if [[ -o interactive && "$TERM_PROGRAM" == "ghostty" ]]; then
   fastfetch
 fi
 
