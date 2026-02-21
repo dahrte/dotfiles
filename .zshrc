@@ -137,7 +137,7 @@ eval "$(zoxide init zsh)"
 
 # alias ls='ls -hal --color'
 alias ls='eza -lagh --group-directories-first'
-alias tree='eza --tree -L 2'
+alias tree='eza --git-ignore --group-directories-first --tree -L 3'
 alias vim=nvim
 alias c=clear
 alias y=yazi
