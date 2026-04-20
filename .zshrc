@@ -7,22 +7,22 @@ export PATH="$HOME/.local/bin:$PATH"
 # Homebrew (Linux)
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# nanobrew
+export PATH="/opt/nanobrew/prefix/bin:$PATH"
+
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# fnm
-FNM_PATH="$HOME/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
-
-eval "$(fnm env --use-on-cd --shell zsh)"
-
 # pnpm
-# export PNPM_HOME="$HOME/.local/share/pnpm"
-# export PATH="$PNPM_HOME:$PATH"
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
 
 # tuitube
 export PATH="$HOME/.termcast/compiled/tuitube/bin:$PATH"
@@ -136,8 +136,8 @@ eval "$(zoxide init zsh)"
 ##############################################################################
 
 # alias ls='ls -hal --color'
-alias ls='eza -lagh --group-directories-first'
-alias tree='eza --git-ignore --group-directories-first --tree -L 3'
+alias ls='lla'
+alias tree='lla -t'
 alias vim=nvim
 alias c=clear
 alias y=yazi
