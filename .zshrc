@@ -4,9 +4,6 @@
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# Homebrew (Linux)
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # nanobrew
 export PATH="/opt/nanobrew/prefix/bin:$PATH"
 
@@ -138,7 +135,6 @@ eval "$(zoxide init zsh)"
 # alias ls='ls -hal --color'
 alias ls='lla'
 alias tree='lla -t'
-alias vim=nvim
 alias c=clear
 alias y=yazi
 alias op=opencode
